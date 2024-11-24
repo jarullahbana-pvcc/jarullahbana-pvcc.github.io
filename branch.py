@@ -1,6 +1,3 @@
-
-
-
 # branch.py
 # Program created by Jarullah Bana
 
@@ -51,10 +48,10 @@ def main():
         except ValueError:
             print("Please enter a valid number for adults and children.")
             continue
-       
+        
         # Display the receipt
         display_receipt(adults, children)
-       
+        
         # Ask if the user wants to order again
         another_order = input("\nWould you like to place another order? (yes/no): ").strip().lower()
         if another_order != 'yes':
