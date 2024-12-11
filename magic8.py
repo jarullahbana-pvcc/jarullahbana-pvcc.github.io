@@ -1,26 +1,40 @@
-import random
+# Name: Jarullah Bana
+# Prog Purpose: This Magic 8-Ball code uses a Python tuple since the
+# user does not have the ability to change the 8-Ball answers.
+# However, the program could have used a Python list instead of a tuple.
+# NOTE: Tuples use parentheses; lists use square braces.
 
-# Tuple of possible answers
-magic_8_ball_responses = (
-    "Yes, definitely!",
-    "Absolutely not!",
-    "I don't think so.",
-    "Maybe, ask again later.",
-    "My sources say no.",
-    "Yes, but not right now.",
-    "It is certain.",
-    "Cannot predict now.",
-    "My answer is unclear.",
-    "Ask again, the answer will change."
+import random
+answers_8_ball = (
+    "As I see it, yes", "Ask again later", 
+    "Better not tell you now", "Cannot predict now", 
+    "Concentrate and ask again", "Don't count on it", 
+    "It is certain", "It is decidedly so", 
+    "Most likely", "My reply is no", 
+    "My sources say no", "Outlook good", 
+    "Outlook not so good", "Reply hazy try again", 
+    "Signs point to yes", "Very doubtful", 
+    "Without a doubt", "Yes", 
+    "Yes definitely", "You may rely on it"
 )
 
-def ask_question():
-    print("Welcome to the Magic 8 Ball program by Farmandeh Bana!")
-    question = input("Ask the Magic 8 Ball a YES or NO question: ")
-    if question.strip()[-1] == '?':
-        print("The Magic 8 Ball says: " + random.choice(magic_8_ball_responses))
-    else:
-        print("Please ask a YES or NO question ending with a '?'.")
+def main():
+    print("I am the MAGIC 8 BALL and can answer any YES or NO question!")
 
-# Running the program
-ask_question()
+    another_question = True
+    while another_question:
+        answer = random.choice(answers_8_ball)
+
+        print("\nShake the MAGIC-8 BALL")
+        print("...and now...")
+        question = input("\nWhat is your YES or NO question? ")
+        print("The MAGIC-8 ball says: " + answer)
+
+        askAgain = input("\nWould you like to ask me another question (Y or N)?: ")
+        if askAgain.upper() == "N" or askAgain == "n":
+            another_question = False
+
+    print("\nCome back again when you have other important questions.")
+    print("...Magic-8 Ball OUT.")
+
+main()
